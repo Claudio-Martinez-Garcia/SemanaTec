@@ -16,8 +16,8 @@ def tap(x, y):
 
 def inside(xy):
     "Return True if xy within screen."
-    "For making the game never end we only change "and" for "or" "
-    return -200 < xy.x < 200 or -200 < xy.y < 200 
+    "For making the game never end we only change eliminate the seccion that makes it end"
+    return  xy.x < 200 and -200 < xy.y < 200 
 
 def draw():
     "Draw ball and targets."
@@ -46,8 +46,8 @@ def move():
     if inside(ball):
         "for increasing speed we decrease the number of speed.y by decimals and we also"
         "add a speed. x, this speed.x will increase the speed also and make it faster"
-        speed.y -= .20
-        speed.x -= .10
+        speed.y -= .25
+        speed.x -= .05
         ball.move(speed)
 
     dupe = targets.copy()
